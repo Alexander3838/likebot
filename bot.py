@@ -17,8 +17,7 @@ def start(update: Update, context: CallbackContext):
         [KeyboardButton("📊 Топ участников"), KeyboardButton("📜 Правила")]
     ]
     reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
-    context.bot.send_message(chat_id=update.effective_chat.id, text="👋 Добро пожаловать!
-Используй кнопки ниже 👇", reply_markup=reply_markup)
+    context.bot.send_message(chat_id=update.effective_chat.id, text="👋 Добро пожаловать!\nИспользуй кнопки ниже 👇", reply_markup=reply_markup)
     users[user.id] = {"videos": [], "likes_given": [], "likes_received": 0}
 
 def is_tiktok_link(text):
