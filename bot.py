@@ -28,12 +28,11 @@ def handle_message(update: Update, context: CallbackContext):
     text = update.message.text
 
     if text == "📜 Правила":
-        context.bot.send_message(chat_id=update.effective_chat.id, text="📋 <b>Правила:</b>
-
-1. Добавляй только TikTok-ссылки
-2. Лайкай 3 видео — получай лайки на своё
-3. Подтверждай только после просмотра 20 секунд
-4. Не жульничай 😉", parse_mode="HTML")
+        context.bot.send_message(
+    chat_id=update.effective_chat.id,
+    text="📋 <b>Правила:</b>\n\n1. Добавляй только TikTok-ссылки\n2. Лайкай 3 видео — получай лайки на своё\n3. Подтверждай только после просмотра 20 секунд\n4. Не жульничай 😉",
+    parse_mode="HTML"
+)
     elif text == "🔗 Добавить видео":
         context.bot.send_message(chat_id=update.effective_chat.id, text="🔗 Отправь ссылку на своё видео с TikTok")
     elif is_tiktok_link(text):
